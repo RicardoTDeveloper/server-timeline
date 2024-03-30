@@ -1,13 +1,13 @@
 const express = require("express");
 const cors = require("cors");
-const delay = require("express-delay");
+// const delay = require("express-delay");
 const { mockData, mockData2, mockData3, mockData4 } = require("./mocks");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 
-app.use(delay(2500));
+// app.use(delay(2500));
 
 app.get("/timeline", (req, res) => {
    const page = req?.query?.page;
