@@ -8,13 +8,17 @@ app.use(cors());
 
 app.use(delay(2500));
 
+function gerarNumeroAleatorio() {
+   return Math.floor(100000000 + Math.random() * 900000000);
+}
+
 const mockData = {
    items: [
       {
          date: "2023-10-11",
          events: [
             {
-               eventId: 154064101,
+               eventId: gerarNumeroAleatorio(),
                eventDate: "2023-10-11T17:11:58.037Z",
                eventType: "TRANSACTION",
                eventCategory: "AUTHORIZE",
@@ -33,7 +37,7 @@ const mockData = {
                cid: "d3efeab2-0ec3-91c7-97c4-a7c76e5b09a7",
             },
             {
-               eventId: 154064100,
+               eventId: gerarNumeroAleatorio(),
                eventDate: "2023-10-11T17:11:50.154Z",
                eventType: "TRANSACTION",
                eventCategory: "AUTHORIZE",
@@ -52,7 +56,7 @@ const mockData = {
                cid: "55edbc53-d1c5-9ed1-9e63-278841983e3c",
             },
             {
-               eventId: 154064098,
+               eventId: gerarNumeroAleatorio(),
                eventDate: "2023-10-11T17:11:40.156Z",
                eventType: "TRANSACTION",
                eventCategory: "DECLINED",
@@ -71,7 +75,7 @@ const mockData = {
                cid: "b6e01c25-f418-9554-9fbd-2155e36e67a1",
             },
             {
-               eventId: 154064097,
+               eventId: gerarNumeroAleatorio(),
                eventDate: "2023-10-11T17:10:41.132Z",
                eventType: "TRANSACTION",
                eventCategory: "DECLINED",
@@ -95,7 +99,7 @@ const mockData = {
          date: "2023-10-08",
          events: [
             {
-               eventId: 153350815,
+               eventId: gerarNumeroAleatorio(),
                eventDate: "2023-10-08T20:21:49.195Z",
                eventType: "TRANSACTION",
                eventCategory: "CANCELLATION",
@@ -113,7 +117,7 @@ const mockData = {
                cid: "725161e3-b1ce-99b8-b3e6-1c517eb534ab",
             },
             {
-               eventId: 153350817,
+               eventId: gerarNumeroAleatorio(),
                eventDate: "2023-10-08T20:21:44.351Z",
                eventType: "TRANSACTION",
                eventCategory: "CANCELLATION",
@@ -131,7 +135,7 @@ const mockData = {
                cid: "a28c6729-a95c-96f7-ba51-6c86df8dd1dc",
             },
             {
-               eventId: 153350719,
+               eventId: gerarNumeroAleatorio(),
                eventDate: "2023-10-08T20:15:14.326Z",
                eventType: "TRANSACTION",
                eventCategory: "CANCELLATION",
@@ -154,7 +158,7 @@ const mockData = {
          date: "2023-10-03",
          events: [
             {
-               eventId: 154052760,
+               eventId: gerarNumeroAleatorio(),
                eventDate: "2023-10-03T17:43:14.026Z",
                eventType: "TRANSACTION",
                eventCategory: "AUTHORIZE",
@@ -173,7 +177,7 @@ const mockData = {
                cid: "10e07eaf-8cf9-936d-892e-b13a6c9025f1",
             },
             {
-               eventId: 154052759,
+               eventId: gerarNumeroAleatorio(),
                eventDate: "2023-10-03T17:42:49.853Z",
                eventType: "TRANSACTION",
                eventCategory: "AUTHORIZE",
@@ -192,7 +196,7 @@ const mockData = {
                cid: "a62761ea-b1db-9bf8-89f2-11c97a82be98",
             },
             {
-               eventId: 154052758,
+               eventId: gerarNumeroAleatorio(),
                eventDate: "2023-10-03T17:42:43.609Z",
                eventType: "TRANSACTION",
                eventCategory: "AUTHORIZE",
@@ -234,7 +238,7 @@ const mockData2 = {
          date: "2024-02-29",
          events: [
             {
-               eventId: 38370974,
+               eventId: gerarNumeroAleatorio(),
                eventType: "STATEMENT",
                eventCategory: "CLOSE",
                eventDate: "2024-02-29T03:00:00Z",
@@ -249,7 +253,7 @@ const mockData2 = {
                cid: "b3f3f673-726f-4902-8b02-ed7530e915e4",
             },
             {
-               eventId: 38370974,
+               eventId: gerarNumeroAleatorio(),
                eventType: "STATEMENT",
                eventCategory: "CLOSE",
                eventDate: "2024-02-29T03:00:00Z",
@@ -264,7 +268,7 @@ const mockData2 = {
                cid: "b3f3f673-726f-4902-8b02-ed7530e915e4",
             },
             {
-               eventId: 38370974,
+               eventId: gerarNumeroAleatorio(),
                eventType: "STATEMENT",
                eventCategory: "CLOSE",
                eventDate: "2024-02-29T03:00:00Z",
@@ -284,7 +288,7 @@ const mockData2 = {
          date: "2023-12-21",
          events: [
             {
-               eventId: 0,
+               eventId: gerarNumeroAleatorio(),
                eventType: "STATEMENT",
                eventCategory: "OVERDUE",
                eventDate: "2023-12-21T06:00:44.014Z",
@@ -299,7 +303,7 @@ const mockData2 = {
                cid: "5ca53449-6958-4a30-b32d-a11119eba8e4",
             },
             {
-               eventId: 0,
+               eventId: gerarNumeroAleatorio(),
                eventType: "STATEMENT",
                eventCategory: "OVERDUE",
                eventDate: "2023-12-21T06:00:44.014Z",
@@ -319,7 +323,7 @@ const mockData2 = {
          date: "2023-10-31",
          events: [
             {
-               eventId: 38370970,
+               eventId: gerarNumeroAleatorio(),
                eventType: "STATEMENT",
                eventCategory: "CLOSE",
                eventDate: "2023-10-31T03:00:00Z",
@@ -334,7 +338,7 @@ const mockData2 = {
                cid: "bd767785-b50a-4c98-bcd8-8fd3efa96be1",
             },
             {
-               eventId: 38370970,
+               eventId: gerarNumeroAleatorio(),
                eventType: "STATEMENT",
                eventCategory: "CLOSE",
                eventDate: "2023-10-31T03:00:00Z",
@@ -349,7 +353,7 @@ const mockData2 = {
                cid: "bd767785-b50a-4c98-bcd8-8fd3efa96be1",
             },
             {
-               eventId: 38370970,
+               eventId: gerarNumeroAleatorio(),
                eventType: "STATEMENT",
                eventCategory: "CLOSE",
                eventDate: "2023-10-31T03:00:00Z",
@@ -364,7 +368,7 @@ const mockData2 = {
                cid: "bd767785-b50a-4c98-bcd8-8fd3efa96be1",
             },
             {
-               eventId: 38370970,
+               eventId: gerarNumeroAleatorio(),
                eventType: "STATEMENT",
                eventCategory: "CLOSE",
                eventDate: "2023-10-31T03:00:00Z",
@@ -379,7 +383,7 @@ const mockData2 = {
                cid: "bd767785-b50a-4c98-bcd8-8fd3efa96be1",
             },
             {
-               eventId: 38370970,
+               eventId: gerarNumeroAleatorio(),
                eventType: "STATEMENT",
                eventCategory: "CLOSE",
                eventDate: "2023-10-31T03:00:00Z",
@@ -418,7 +422,7 @@ const mockData3 = [
             date: "2024-02-29",
             events: [
                {
-                  eventId: 38370974,
+                  eventId: gerarNumeroAleatorio(),
                   eventType: "STATEMENT",
                   eventCategory: "CLOSE",
                   eventDate: "2024-02-29T03:00:00Z",
@@ -438,7 +442,7 @@ const mockData3 = [
             date: "2023-12-21",
             events: [
                {
-                  eventId: 0,
+                  eventId: gerarNumeroAleatorio(),
                   eventType: "STATEMENT",
                   eventCategory: "OVERDUE",
                   eventDate: "2023-12-21T06:00:44.014Z",
@@ -459,7 +463,7 @@ const mockData3 = [
 ];
 
 const mockData4 = {
-   eventId: 154573438,
+   eventId: gerarNumeroAleatorio(),
    eventDate: "2023-10-23T13:29:20.008Z",
    eventType: "TRANSACTION",
    eventCategory: "DECLINED",
@@ -500,11 +504,11 @@ app.get("/timeline", (req, res) => {
    const filter = req?.query?.filter;
 
    if (filter === "fatura") {
-      return res.status(200).json(mockData);
+      return res.status(200).json(mockData2);
    }
 
    if (filter === "confirmados") {
-      return res.status(200).json(mockData2);
+      return res.status(200).json(mockData);
    }
 
    if (page === "0") {
@@ -524,7 +528,7 @@ app.get("/timeline/criticalTransactions", (req, res) => {
                date: "2024-02-29",
                events: [
                   {
-                     eventId: 38370974,
+                     eventId: gerarNumeroAleatorio(),
                      eventType: "STATEMENT",
                      eventCategory: "CLOSE",
                      eventDate: "2024-02-29T03:00:00Z",
@@ -544,7 +548,7 @@ app.get("/timeline/criticalTransactions", (req, res) => {
                date: "2023-12-21",
                events: [
                   {
-                     eventId: 0,
+                     eventId: gerarNumeroAleatorio(),
                      eventType: "STATEMENT",
                      eventCategory: "OVERDUE",
                      eventDate: "2023-12-21T06:00:44.014Z",
