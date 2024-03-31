@@ -12,18 +12,18 @@ function gerarNumeroAleatorio() {
    return Math.floor(100000000 + Math.random() * 900000000);
 }
 
-const mockData = {
+const mockDataTransactions = {
    items: [
       {
          date: "2023-10-11",
          events: [
             {
-               eventId: gerarNumeroAleatorio(),
+               eventId: 154064101,
                eventDate: "2023-10-11T17:11:58.037Z",
                eventType: "TRANSACTION",
                eventCategory: "AUTHORIZE",
                establishmentName: "COMPRA sem JUROS",
-               establishmentMerchantCategoryGroup: "FUEL",
+               establishmentMerchantCategoryGroup: "MARKETPLACE",
                transactionDetails: {
                   orgOperationType: "INSTALLMENT_PURCHASE_WITHOUT_INTEREST",
                   last4Digits: "4655",
@@ -37,12 +37,12 @@ const mockData = {
                cid: "d3efeab2-0ec3-91c7-97c4-a7c76e5b09a7",
             },
             {
-               eventId: gerarNumeroAleatorio(),
+               eventId: 154064100,
                eventDate: "2023-10-11T17:11:50.154Z",
                eventType: "TRANSACTION",
                eventCategory: "AUTHORIZE",
                establishmentName: "COMPRA sem JUROS",
-               establishmentMerchantCategoryGroup: "FUEL",
+               establishmentMerchantCategoryGroup: "ACADEMIC",
                transactionDetails: {
                   orgOperationType: "INSTALLMENT_PURCHASE_WITHOUT_INTEREST",
                   last4Digits: "4655",
@@ -56,12 +56,12 @@ const mockData = {
                cid: "55edbc53-d1c5-9ed1-9e63-278841983e3c",
             },
             {
-               eventId: gerarNumeroAleatorio(),
+               eventId: 154064098,
                eventDate: "2023-10-11T17:11:40.156Z",
                eventType: "TRANSACTION",
                eventCategory: "DECLINED",
                establishmentName: "COMPRA COM JUROS - AF EM DIA_1_",
-               establishmentMerchantCategoryGroup: "FUEL",
+               establishmentMerchantCategoryGroup: "MARKETPLACE",
                transactionDetails: {
                   orgOperationType: "INSTALLMENT_PURCHASE_WITH_INTEREST",
                   last4Digits: "4779",
@@ -75,7 +75,7 @@ const mockData = {
                cid: "b6e01c25-f418-9554-9fbd-2155e36e67a1",
             },
             {
-               eventId: gerarNumeroAleatorio(),
+               eventId: 154064097,
                eventDate: "2023-10-11T17:10:41.132Z",
                eventType: "TRANSACTION",
                eventCategory: "DECLINED",
@@ -99,12 +99,12 @@ const mockData = {
          date: "2023-10-08",
          events: [
             {
-               eventId: gerarNumeroAleatorio(),
+               eventId: 153350815,
                eventDate: "2023-10-08T20:21:49.195Z",
                eventType: "TRANSACTION",
                eventCategory: "CANCELLATION",
                establishmentName: "COMPRA COM JUROS - AF EM DIA_1_",
-               establishmentMerchantCategoryGroup: "FUEL",
+               establishmentMerchantCategoryGroup: "MARKETPLACE",
                transactionDetails: {
                   orgOperationType: "INSTALLMENT_PURCHASE_WITH_INTEREST",
                   isOwner: null,
@@ -117,7 +117,7 @@ const mockData = {
                cid: "725161e3-b1ce-99b8-b3e6-1c517eb534ab",
             },
             {
-               eventId: gerarNumeroAleatorio(),
+               eventId: 153350817,
                eventDate: "2023-10-08T20:21:44.351Z",
                eventType: "TRANSACTION",
                eventCategory: "CANCELLATION",
@@ -135,12 +135,12 @@ const mockData = {
                cid: "a28c6729-a95c-96f7-ba51-6c86df8dd1dc",
             },
             {
-               eventId: gerarNumeroAleatorio(),
+               eventId: 153350719,
                eventDate: "2023-10-08T20:15:14.326Z",
                eventType: "TRANSACTION",
                eventCategory: "CANCELLATION",
                establishmentName: "COMPRA COM JUROS - AF EM DIA_1_",
-               establishmentMerchantCategoryGroup: "FUEL",
+               establishmentMerchantCategoryGroup: "SHOPPING",
                transactionDetails: {
                   orgOperationType: "INSTALLMENT_PURCHASE_WITH_INTEREST",
                   isOwner: null,
@@ -158,12 +158,12 @@ const mockData = {
          date: "2023-10-03",
          events: [
             {
-               eventId: gerarNumeroAleatorio(),
+               eventId: 154052760,
                eventDate: "2023-10-03T17:43:14.026Z",
                eventType: "TRANSACTION",
                eventCategory: "AUTHORIZE",
                establishmentName: "COMPRA sem JUROS",
-               establishmentMerchantCategoryGroup: "FUEL",
+               establishmentMerchantCategoryGroup: "SHOPPING",
                transactionDetails: {
                   orgOperationType: "INSTALLMENT_PURCHASE_WITHOUT_INTEREST",
                   last4Digits: "4655",
@@ -177,7 +177,7 @@ const mockData = {
                cid: "10e07eaf-8cf9-936d-892e-b13a6c9025f1",
             },
             {
-               eventId: gerarNumeroAleatorio(),
+               eventId: 154052759,
                eventDate: "2023-10-03T17:42:49.853Z",
                eventType: "TRANSACTION",
                eventCategory: "AUTHORIZE",
@@ -196,12 +196,12 @@ const mockData = {
                cid: "a62761ea-b1db-9bf8-89f2-11c97a82be98",
             },
             {
-               eventId: gerarNumeroAleatorio(),
+               eventId: 154052758,
                eventDate: "2023-10-03T17:42:43.609Z",
                eventType: "TRANSACTION",
                eventCategory: "AUTHORIZE",
                establishmentName: "COMPRA COM JUROS - AF EM DIA_1_",
-               establishmentMerchantCategoryGroup: "FUEL",
+               establishmentMerchantCategoryGroup: "MARKETPLACE",
                transactionDetails: {
                   orgOperationType: "INSTALLMENT_PURCHASE_WITH_INTEREST",
                   last4Digits: "4655",
@@ -232,7 +232,7 @@ const mockData = {
    },
 };
 
-const mockData2 = {
+const mockDataStatement = {
    items: [
       {
          date: "2024-02-29",
@@ -415,54 +415,235 @@ const mockData2 = {
    },
 };
 
-const mockData3 = [
-   {
-      items: [
-         {
-            date: "2024-02-29",
-            events: [
-               {
-                  eventId: gerarNumeroAleatorio(),
-                  eventType: "STATEMENT",
-                  eventCategory: "CLOSE",
-                  eventDate: "2024-02-29T03:00:00Z",
-                  dueDate: "2024-03-10",
-                  amountDetails: {
-                     localAmount: null,
-                     currentBalance: 167.1,
-                     previousBalance: 132.92,
-                     credits: 0,
-                     debits: 34.18,
-                  },
-                  cid: "b3f3f673-726f-4902-8b02-ed7530e915e4",
+const mockDataLimit = {
+   items: [
+      {
+         date: "2023-11-06",
+         events: [
+            {
+               eventId: 8461454048726499000,
+               eventType: "CREDIT_LIMIT",
+               eventCategory: "RECEPTIVE_ONLINE",
+               status: "APPROVED",
+               accountId: 103343442,
+               creditLimitId: "c846f145-b4f0-4f87-bf26-499149c1c927",
+               presentMaxLimit: 8900,
+               amountRequest: 12000,
+               approvedAmount: 12000,
+               lastUpdateDate: "2023-11-06T18:25:51Z",
+               creationDate: "2023-11-06T18:25:51Z",
+               action: "INCREASE",
+               reason: {
+                  id: "5357fa6d-017d-45ec-99b1-7c828b96a6f1",
+                  description: "Outros",
                },
-            ],
-         },
-         {
-            date: "2023-12-21",
-            events: [
-               {
-                  eventId: gerarNumeroAleatorio(),
-                  eventType: "STATEMENT",
-                  eventCategory: "OVERDUE",
-                  eventDate: "2023-12-21T06:00:44.014Z",
-                  dueDate: "2023-12-10",
-                  amountDetails: {
-                     localAmount: 0,
-                     currentBalance: 0,
-                     previousBalance: 0,
-                     credits: 0,
-                     debits: 0,
-                  },
-                  cid: "5ca53449-6958-4a30-b32d-a11119eba8e4",
+            },
+         ],
+      },
+      {
+         date: "2023-10-06",
+         events: [
+            {
+               eventId: 280324728599427620,
+               eventType: "CREDIT_LIMIT",
+               eventCategory: "RECEPTIVE_ONLINE",
+               status: "APPROVED",
+               accountId: 103343442,
+               creditLimitId: "be028abe-03e2-472c-859e-94c2fb76206d",
+               presentMaxLimit: 8800,
+               amountRequest: 8900,
+               approvedAmount: 8900,
+               lastUpdateDate: "2023-10-06T16:18:20Z",
+               creationDate: "2023-10-06T16:18:20Z",
+               action: "INCREASE",
+               reason: {
+                  id: "5e7aebe65451a8e07f13d572",
+                  description: "Outros",
                },
-            ],
-         },
-      ],
+            },
+            {
+               eventId: 280324728599427620,
+               eventType: "CREDIT_LIMIT",
+               eventCategory: "RECEPTIVE_ONLINE",
+               status: "APPROVED",
+               accountId: 103343442,
+               creditLimitId: "be028abe-03e2-472c-859e-94c2fb76206d",
+               presentMaxLimit: 8600,
+               amountRequest: 8800,
+               approvedAmount: 8800,
+               lastUpdateDate: "2023-10-06T16:17:45Z",
+               creationDate: "2023-10-06T16:17:45Z",
+               action: "INCREASE",
+               reason: {
+                  id: "5e7aebe65451a8e07f13d572",
+                  description: "Outros",
+               },
+            },
+            {
+               eventId: 907068840429193200,
+               eventType: "CREDIT_LIMIT",
+               eventCategory: "RECEPTIVE_ONLINE",
+               status: "APPROVED",
+               accountId: 103343442,
+               creditLimitId: "90ff7068-e8ee-4042-91a9-3a2efcff1e4d",
+               presentMaxLimit: 8500,
+               amountRequest: 8600,
+               approvedAmount: 8600,
+               lastUpdateDate: "2023-10-06T14:47:58Z",
+               creationDate: "2023-10-06T14:47:58Z",
+               action: "INCREASE",
+               reason: {
+                  id: "5e7aebe65451a8e07f13d572",
+                  description: "Outros",
+               },
+            },
+         ],
+      },
+      {
+         date: "2023-10-05",
+         events: [
+            {
+               eventId: 5626704634896218000,
+               eventType: "CREDIT_LIMIT",
+               eventCategory: "RECEPTIVE_ONLINE",
+               status: "APPROVED",
+               accountId: 103343442,
+               creditLimitId: "d5626704-f6f3-4bf8-9621-794ba808b5ca",
+               presentMaxLimit: 7600,
+               amountRequest: 8500,
+               approvedAmount: 8500,
+               lastUpdateDate: "2023-10-05T14:32:43Z",
+               creationDate: "2023-10-05T14:32:43Z",
+               action: "INCREASE",
+               reason: {
+                  id: "5e7aebe65451a8e07f13d572",
+                  description: "Outros",
+               },
+            },
+         ],
+      },
+      {
+         date: "2023-09-29",
+         events: [
+            {
+               eventId: 1339164599479810800,
+               eventType: "CREDIT_LIMIT",
+               eventCategory: "RECEPTIVE_ONLINE",
+               status: "APPROVED",
+               accountId: 103343442,
+               creditLimitId: "eea133c9-b1f6-4e59-9479-c81092180f15",
+               presentMaxLimit: 7000,
+               amountRequest: 7600,
+               approvedAmount: 7600,
+               lastUpdateDate: "2023-09-29T19:18:23Z",
+               creationDate: "2023-09-29T19:18:23Z",
+               action: "INCREASE",
+               reason: {
+                  id: "5e7aebe65451a8e07f13d572",
+                  description: "Outros",
+               },
+            },
+            {
+               eventId: 1339164599479810800,
+               eventType: "CREDIT_LIMIT",
+               eventCategory: "RECEPTIVE_ONLINE",
+               status: "APPROVED",
+               accountId: 103343442,
+               creditLimitId: "eea133c9-b1f6-4e59-9479-c81092180f15",
+               presentMaxLimit: 6600,
+               amountRequest: 7000,
+               approvedAmount: 7000,
+               lastUpdateDate: "2023-09-29T19:17:19Z",
+               creationDate: "2023-09-29T19:17:19Z",
+               action: "INCREASE",
+               reason: {
+                  id: "5e7aebe65451a8e07f13d572",
+                  description: "Outros",
+               },
+            },
+         ],
+      },
+      {
+         date: "2023-09-28",
+         events: [
+            {
+               eventId: 1689364368234029000,
+               eventType: "CREDIT_LIMIT",
+               eventCategory: "RECEPTIVE_ONLINE",
+               status: "APPROVED",
+               accountId: 103343442,
+               creditLimitId: "16aeb8e9-36ad-4f36-82d3-4029ecf0f036",
+               presentMaxLimit: 6500,
+               amountRequest: 6600,
+               approvedAmount: 6600,
+               lastUpdateDate: "2023-09-28T21:59:11Z",
+               creationDate: "2023-09-28T21:59:11Z",
+               action: "INCREASE",
+               reason: {
+                  id: "5e7aebe65451a8e07f13d572",
+                  description: "Outros",
+               },
+            },
+         ],
+      },
+      {
+         date: "2023-09-22",
+         events: [
+            {
+               eventId: 6500140394386741,
+               eventType: "CREDIT_LIMIT",
+               eventCategory: "RECEPTIVE",
+               status: "IN_PROGRESS",
+               accountId: 103343442,
+               creditLimitId: "650e0d140d394d3c867a41fe",
+               presentMaxLimit: 6500,
+               amountRequest: 12000,
+               approvedAmount: 0,
+               lastUpdateDate: "2023-09-22T21:54:28Z",
+               creationDate: "2023-09-22T21:54:28Z",
+               action: "INCREASE",
+               reason: {
+                  id: "5e7aebe65451a8e07f13d572",
+                  description: "Outros",
+               },
+            },
+            {
+               eventId: 7290022352425593000,
+               eventType: "CREDIT_LIMIT",
+               eventCategory: "RECEPTIVE_ONLINE",
+               status: "APPROVED",
+               accountId: 103343442,
+               creditLimitId: "7e29c002-2352-4255-9b3c-2f133c431e21",
+               presentMaxLimit: 5000,
+               amountRequest: 6500,
+               approvedAmount: 6500,
+               lastUpdateDate: "2023-09-22T16:10:30Z",
+               creationDate: "2023-09-22T16:10:30Z",
+               action: "INCREASE",
+               reason: {
+                  id: "5e7aebe65451a8e07f13d572",
+                  description: "Outros",
+               },
+            },
+         ],
+      },
+   ],
+   paging: {
+      hasNextPage: true,
+      previous: null,
+      next: "_page=1&_size=10",
+      actual: {
+         page: 0,
+         elements: 10,
+      },
+      total: {
+         pages: 2,
+         elements: 15,
+      },
    },
-];
+};
 
-const mockData4 = {
+const mockDataDetails1 = {
    eventId: gerarNumeroAleatorio(),
    eventDate: "2023-10-23T13:29:20.008Z",
    eventType: "TRANSACTION",
@@ -504,19 +685,23 @@ app.get("/timeline", (req, res) => {
    const filter = req?.query?.filter;
 
    if (filter === "fatura") {
-      return res.status(200).json(mockData2);
+      return res.status(200).json(mockDataStatement);
    }
 
    if (filter === "confirmados") {
-      return res.status(200).json(mockData);
+      return res.status(200).json(mockDataTransactions);
+   }
+
+   if (filter === "limite") {
+      return res.status(200).json(mockDataLimit);
    }
 
    if (page === "0") {
-      return res.status(200).json(mockData2);
+      return res.status(200).json(mockDataStatement);
    }
 
    if (page === "1") {
-      return res.status(200).json(mockData);
+      return res.status(200).json(mockDataTransactions);
    }
 });
 
@@ -573,26 +758,26 @@ app.get("/timeline/detailsTransactions/:eventId", (req, res) => {
    const random = Math.floor(Math.random() * 10);
 
    if (random === 1) {
-      return res.status(200).json(mockData4);
+      return res.status(200).json(mockDataDetails1);
    }
 
    if (random === 2) {
-      return res.status(200).json(mockData4);
+      return res.status(200).json(mockDataDetails1);
    }
 
    if (random === 3) {
-      return res.status(200).json(mockData4);
+      return res.status(200).json(mockDataDetails1);
    }
 
    if (random === 4) {
-      return res.status(200).json(mockData4);
+      return res.status(200).json(mockDataDetails1);
    }
 
    if (random === 5) {
-      return res.status(200).json(mockData4);
+      return res.status(200).json(mockDataDetails1);
    }
 
-   return res.status(200).json(mockData4);
+   return res.status(200).json(mockDataDetails1);
 });
 
 app.listen(port, () => {
