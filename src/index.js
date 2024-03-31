@@ -643,12 +643,51 @@ const mockDataLimit = {
    },
 };
 
-const mockDataDetails1 = {
-   eventId: gerarNumeroAleatorio(),
+const mockDataDetailsTransactionRequer = {
+   additional: true,
+   eventId: 878845454454,
    eventDate: "2023-10-23T13:29:20.008Z",
    eventType: "TRANSACTION",
-   eventCategory: "DECLINED",
-   establishmentName: "saque internacional",
+   eventCategory: "SUSPICION",
+   establishmentName: "Renner",
+   establishmentMerchantCategoryGroup: "FUEL",
+   transactionDetails: {
+      orgOperationType: "INTERNATIONAL_PURCHASE",
+      orgOperationDescription: "COMPRA INTERNACIONAL",
+      cardType: "VIRTUAL",
+      network: "MASTERCARD",
+      entryModeLiteral: "CHIP",
+      last4Digits: "4779",
+      isOwner: true,
+   },
+   numberOfInstallments: 1,
+   installmentsDetails: [
+      {
+         value: 50.42,
+         date: "2023-10-31",
+      },
+   ],
+   amountDetails: {
+      contractAmount: 53.64,
+      cardholderBillingAmount: 250.45,
+      localAmount: 12,
+      dollarExchange: 4.2015,
+      currencyLiteral: "BRL",
+      dollarAmount: 12,
+   },
+   denyDetails: {
+      customResponseCode: "FRB",
+   },
+   cid: "7f664726-1679-9f4b-9e2a-7810383cbcc7",
+};
+
+const mockDataDetailsTransactionConfirmado = {
+   additional: false,
+   eventId: 878845454454,
+   eventDate: "2023-10-23T13:29:20.008Z",
+   eventType: "TRANSACTION",
+   eventCategory: "AUTHORIZE",
+   establishmentName: "Mercado Livre",
    establishmentMerchantCategoryGroup: "FUEL",
    transactionDetails: {
       orgOperationType: "INTERNATIONAL_PURCHASE",
@@ -668,16 +707,118 @@ const mockDataDetails1 = {
    ],
    amountDetails: {
       contractAmount: 53.64,
-      cardholderBillingAmount: 50.42,
+      cardholderBillingAmount: 145.78,
       localAmount: 12,
       dollarExchange: 4.2015,
-      currencyLiteral: "USD",
+      currencyLiteral: "BRL",
       dollarAmount: 12,
    },
    denyDetails: {
       customResponseCode: "FRB",
    },
    cid: "7f664726-1679-9f4b-9e2a-7810383cbcc7",
+};
+
+const mockDataDetailsTransactionReferido = {
+   additional: false,
+   eventId: 878845454454,
+   eventDate: "2023-10-23T13:29:20.008Z",
+   eventType: "TRANSACTION",
+   eventCategory: "REFERRED",
+   establishmentName: "Mercado Livre",
+   establishmentMerchantCategoryGroup: "FUEL",
+   transactionDetails: {
+      orgOperationType: "INTERNATIONAL_PURCHASE",
+      orgOperationDescription: "COMPRA INTERNACIONAL",
+      cardType: "PLASTIC",
+      network: "MASTERCARD",
+      entryModeLiteral: "CHIP",
+      last4Digits: "4779",
+      isOwner: true,
+   },
+   numberOfInstallments: 1,
+   installmentsDetails: [
+      {
+         value: 50.42,
+         date: "2023-10-31",
+      },
+   ],
+   amountDetails: {
+      contractAmount: 53.64,
+      cardholderBillingAmount: 145.78,
+      localAmount: 12,
+      dollarExchange: 4.2015,
+      currencyLiteral: "BRL",
+      dollarAmount: 12,
+   },
+   denyDetails: {
+      customResponseCode: "FRB",
+   },
+   cid: "7f664726-1679-9f4b-9e2a-7810383cbcc7",
+};
+
+const mockDataDetailsTransactionNegado = {
+   additional: false,
+   eventId: 878845454454,
+   eventDate: "2023-10-23T13:29:20.008Z",
+   eventType: "TRANSACTION",
+   eventCategory: "DENIED",
+   establishmentName: "Amazon.com",
+   establishmentMerchantCategoryGroup: "FUEL",
+   transactionDetails: {
+      orgOperationType: "INTERNATIONAL_PURCHASE",
+      orgOperationDescription: "COMPRA INTERNACIONAL",
+      cardType: "VIRTUAL",
+      network: "MASTERCARD",
+      entryModeLiteral: "CHIP",
+      last4Digits: "4779",
+      isOwner: true,
+   },
+   numberOfInstallments: 1,
+   installmentsDetails: [
+      {
+         value: 50.42,
+         date: "2023-10-31",
+      },
+   ],
+   amountDetails: {
+      contractAmount: 53.64,
+      cardholderBillingAmount: 1450.78,
+      localAmount: 12,
+      dollarExchange: 4.2015,
+      currencyLiteral: "BRL",
+      dollarAmount: 12,
+   },
+   denyDetails: {
+      customResponseCode: "FRB",
+   },
+   cid: "7f664726-1679-9f4b-9e2a-7810383cbcc7",
+};
+
+const mockDataDetailsStatement = {
+   additional: true,
+   eventId: 38370974,
+   eventType: "STATEMENT",
+   eventCategory: "OVERDUE",
+   eventDate: "2024-02-29T03:00:00Z",
+   dueDate: "2024-03-10",
+   amountDetails: {
+      localAmount: null,
+      currentBalance: 167.1,
+      previousBalance: 132.92,
+      credits: 0,
+      debits: 34.18,
+   },
+   transactionDetails: {
+      orgOperationType: "INTERNATIONAL_PURCHASE",
+      orgOperationDescription: "COMPRA INTERNACIONAL",
+      cardType: "PLASTIC",
+      network: "MASTERCARD",
+      entryModeLiteral: "CHIP",
+      last4Digits: "4779",
+      isOwner: true,
+   },
+   cid: "b3f3f673-726f-4902-8b02-ed7530e915e4",
 };
 
 app.get("/timeline", (req, res) => {
@@ -755,29 +896,28 @@ app.get("/timeline/criticalTransactions", (req, res) => {
 });
 
 app.get("/timeline/detailsTransactions/:eventId", (req, res) => {
-   const random = Math.floor(Math.random() * 10);
+   const eventId = req.params.eventId;
+   const random = Number(eventId.toString().slice(-1));
 
-   if (random === 1) {
-      return res.status(200).json(mockDataDetails1);
+   if (random <= 1) {
+      return res.status(200).json(mockDataDetailsTransactionRequer);
    }
 
-   if (random === 2) {
-      return res.status(200).json(mockDataDetails1);
+   if (random === 2 || random === 3) {
+      return res.status(200).json(mockDataDetailsTransactionConfirmado);
    }
 
-   if (random === 3) {
-      return res.status(200).json(mockDataDetails1);
+   if (random === 4 || random === 5) {
+      return res.status(200).json(mockDataDetailsTransactionReferido);
    }
 
-   if (random === 4) {
-      return res.status(200).json(mockDataDetails1);
+   if (random === 6 || random === 7) {
+      return res.status(200).json(mockDataDetailsTransactionNegado);
    }
 
-   if (random === 5) {
-      return res.status(200).json(mockDataDetails1);
+   if (random === 8 || random >= 9) {
+      return res.status(200).json(mockDataDetailsStatement);
    }
-
-   return res.status(200).json(mockDataDetails1);
 });
 
 app.listen(port, () => {
