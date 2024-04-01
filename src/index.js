@@ -1055,7 +1055,7 @@ const mockDataDetailsStatement = {
 
 app.get("/timeline", (req, res) => {
    const page = req?.query?.page;
-   const filter = req?.query?.filter;
+   const filter = req?.query?.filters;
 
    if (filter === "fatura") {
       return res.status(200).json(mockDataStatement);
@@ -1091,7 +1091,7 @@ app.get("/timeline/criticalTransactions", (req, res) => {
                      eventType: "TRANSACTION",
                      eventCategory: "DECLINED",
                      establishmentName: "Spotify",
-                     establishmentMerchantCategoryGroup: "MARKETPLACE",
+                     establishmentMerchantCategoryGroup: "SHOPPING",
                      transactionDetails: {
                         orgOperationType: "INSTALLMENT_PURCHASE_WITH_INTEREST",
                         last4Digits: "4779",
@@ -1115,7 +1115,7 @@ app.get("/timeline/criticalTransactions", (req, res) => {
                      eventType: "TRANSACTION",
                      eventCategory: "DECLINED",
                      establishmentName: "Loja Marisa",
-                     establishmentMerchantCategoryGroup: "MARKETPLACE",
+                     establishmentMerchantCategoryGroup: "SHOPPING",
                      transactionDetails: {
                         orgOperationType: "INSTALLMENT_PURCHASE_WITH_INTEREST",
                         last4Digits: "4779",
